@@ -14,10 +14,10 @@
 #   in _config.yml. It will appear in your document head meta (for Google search
 #   results) and in your feed.xml site description.
 
-title: Yo voy a hacer el flan 
-description: "AI joder... ENRIQUE"
-owner_name: AVG11235
-github_username: groupstudent
+title: what
+description: "who"
+owner_name: Mateo Durand
+github_username: AVG11235
 github_repo: "groupstudent" 
 baseurl: "/groupstudent" 
 future: true
