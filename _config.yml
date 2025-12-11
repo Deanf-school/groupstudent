@@ -16,10 +16,10 @@
 
 title: Open Coding 
 description: "Class of 2026"
-owner_name: John Mortensen
-github_username: jm1021 
-github_repo: "student" 
-baseurl: "/student" 
+owner_name: groupstudent
+github_username: groupstudent
+github_repo: "groupstudent" 
+baseurl: "/groupstudent" 
 future: true
 
 # Build settings
