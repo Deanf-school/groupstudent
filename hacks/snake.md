@@ -63,7 +63,7 @@ permalink: /snake/
     }
 
     #setting input:checked + label{
-        background-color: #0048ceff;
+        background-color: #11ce00ff;
         color: #000;
     }
 </style>
