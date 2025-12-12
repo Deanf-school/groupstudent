@@ -362,8 +362,8 @@ permalink: /snake/
         /////////////////////////////////////////////////////////////
         let setWall = function(wall_value){
             wall = wall_value;
-            if(wall === 0){screen_snake.style.borderColor = "#ebde2bff";}
-            if(wall === 1){screen_snake.style.borderColor = "#553b03ff";}
+            if(wall === 0){screen_snake.style.borderColor = "#2beb2bff";}
+            if(wall === 1){screen_snake.style.borderColor = "#0a5503ff";}
         }
     })();
 </script>
