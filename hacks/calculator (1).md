@@ -41,6 +41,7 @@ permalink: /calculator
       <!-- Row 5 -->
       <div class="calculator-number zero">0</div>
       <div class="calculator-equals">=</div>
+      <div class="calculator-operation">√</div>
   </div>
 </div>
 
