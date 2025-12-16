@@ -81,6 +81,57 @@ operations.forEach(button => {
   });
 });
 
+// Function to handle all keyboard input
+function handleKeyboardInput(event) {
+    const key = event.key;
+    
+
+    if (key === 'Backspace') {
+        event.preventDefault();
+    }
+    
+    // Numbers and Decimal points 
+    if (/[0-9.]/.test(key)) {
+      
+        number(key);
+    }
+    
+    //  Operations 
+    else if (/[+\-*/]/.test(key)) {
+      
+        operation(key);
+    } 
+    
+    //  equals
+    else if (key === 'Enter' || key === '=') {
+       
+        
+       
+        if (firstNumber !== null && operator !== null) {
+            firstNumber = calculate(firstNumber, parseFloat(output.textContent));
+            output.textContent = firstNumber;
+            firstNumber = null;
+            operator = null;
+            nextReady = true;
+        }
+
+        
+        event.preventDefault(); 
+    } 
+    
+    // esc is the key for A/C 
+    else if (key === 'Escape') {
+        
+        firstNumber = null;
+        operator = null;
+        output.textContent = "0";
+        nextReady = true;
+    }
+}
+
+
+document.addEventListener('keydown', handleKeyboardInput);
+
 function operation(choice) {
     if (firstNumber === null) {
         firstNumber = parseFloat(output.textContent);
