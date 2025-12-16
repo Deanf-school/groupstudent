@@ -17,7 +17,7 @@ permalink: /snake/
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color: #024606ff;
+        border-color: #c01ec0ff;
     }
     canvas:focus{
         outline: none;
@@ -63,7 +63,7 @@ permalink: /snake/
     }
 
     #setting input:checked + label{
-        background-color: #11ce00ff;
+        background-color: #9d12a1ff;
         color: #000;
     }
 </style>
@@ -353,9 +353,9 @@ permalink: /snake/
         }
         /////////////////////////////////////////////////////////////
         // Change the snake speed...
-        // 150 = slow
-        // 100 = normal
-        // 50 = fast
+        // 110 = slow
+        // 85 = normal
+        // 15 = fast
         let setSnakeSpeed = function(speed_value){
             snake_speed = speed_value;
         }
