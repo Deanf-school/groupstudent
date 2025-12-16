@@ -104,12 +104,16 @@ function calculate(first, second) {
       result = first - second;
       break;
     case "*":
-      // TODO: Students add multiplication logic here
-      result = "TODO: implement *";
+      
+      result = first * second
       break;
     case "/":
-      // TODO: Students add division logic here
-      result = "TODO: implement /";
+    
+      if (second == 0) {
+        result = "error"
+      } else {
+        result = first / second
+      }
       break;
     default:
       result = first;
