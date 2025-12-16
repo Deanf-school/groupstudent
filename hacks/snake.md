@@ -217,7 +217,7 @@ permalink: /snake/
             let _x = snake[0].x;
             let _y = snake[0].y;
             snake_dir = snake_next_dir;   // read async event key
-            // Direction 0 - Up, 1 - Right, 2 - Down, 3 - Left
+            // Direction 0 - W, 1 - D, 2 - S, 3 - A
             switch(snake_dir){
                 case 0: _y--; break;
                 case 1: _x++; break;
@@ -353,9 +353,10 @@ permalink: /snake/
         }
         /////////////////////////////////////////////////////////////
         // Change the snake speed...
-        // 110 = slow
-        // 85 = normal
-        // 15 = fast
+        // 175 = slow
+        // 100 = normal
+        // 50 = fast
+        // 10 = Impossible
         let setSnakeSpeed = function(speed_value){
             snake_speed = speed_value;
         }
