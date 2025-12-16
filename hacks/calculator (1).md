@@ -82,16 +82,37 @@ operations.forEach(button => {
 });
 
 function operation(choice) {
-  if (firstNumber === null) {
-    firstNumber = parseFloat(output.textContent);
-    operator = choice;
-    nextReady = true;
-  } else {
-    firstNumber = calculate(firstNumber, parseFloat(output.textContent));
-    operator = choice;
-    output.textContent = firstNumber;
-    nextReady = true;
+    if (firstNumber === null) {
+        firstNumber = parseFloat(output.textContent);
+        operator = choice; // store operator ("+", "-", "*", "/", "√")
+        nextReady = true;
+    } else {
+        firstNumber = calculate(firstNumber, parseFloat(output.textContent));
+        operator = choice;
+        output.textContent = firstNumber;
+        nextReady = true;
+    }
+}
+
+
+
+function squareRoot() {
+  let num = parseFloat(output.textContent);
+
+  if (isNaN(num) || num < 0) {
+        output.textContent = "Error";
+        firstNumber = null;
+        operator = null;
+        nextReady = true;
+        return;
   }
+
+  let result = Math.sqrt(num);
+
+  output.textContent = result.toString();
+  firstNumber = result;
+  operator = null;
+  nextReady = true;
 }
 
 // Calculation logic
@@ -106,17 +127,24 @@ function calculate(first, second) {
       break;
     case "*":
       
-      result = first * second
+      result = first * second;
       break;
     case "/":
     
       if (second == 0) {
-        result = "error"
+        result = "error";
       } else {
-        result = first / second
+        result = first / second;
       }
       break;
-    default:
+    case "√":
+      if (first < 0) {
+        result = "error";
+      } else {
+        result = Math.sqrt(first);
+      }
+      break;
+     default:
       result = first;
   }
   return result;
