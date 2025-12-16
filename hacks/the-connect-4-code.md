@@ -20,13 +20,13 @@ permalink: /connect4/play/
   <!-- Game Screen - Board Overlay -->
   <section id="game" class="hidden game-overlay">
     <div class="hud">
-      <!-- Red panel -->
-      <div class="panel red-side">
-        <h2>Red</h2>
-        <div class="timer" id="tRed">05:00</div>
+      <!-- Purple panel -->
+      <div class="panel purple-side">
+        <h2>Purple</h2>
+        <div class="timer" id="tPurple">05:00</div>
         <div class="stash">
-          <div class="dot red"></div>
-          <span>Coins: <b id="cRed">21</b></span>
+          <div class="dot purple"></div>
+          <span>Coins: <b id="cPurple">21</b></span>
         </div>
       </div>
       <!-- Board -->
@@ -35,13 +35,13 @@ permalink: /connect4/play/
         <!-- falling coin overlay -->
         <div id="fall" class="coin hidden"></div>
       </div>
-      <!-- Yellow panel -->
-      <div class="panel yellow-side">
-        <h2>Yellow</h2>
-        <div class="timer" id="tYellow">05:00</div>
+      <!-- Orange panel -->
+      <div class="panel orange-side">
+        <h2>Orange</h2>
+        <div class="timer" id="tOrange">05:00</div>
         <div class="stash">
-          <div class="dot yellow"></div>
-          <span>Coins: <b id="cYellow">21</b></span>
+          <div class="dot orange"></div>
+          <span>Coins: <b id="cOrange">21</b></span>
         </div>
       </div>
     </div>
@@ -61,8 +61,8 @@ permalink: /connect4/play/
     --card:#17181c;
     --muted:#a9b0be;
     --blue:#1658e5;
-    --red:#ef4444;
-    --yellow:#facc15;
+    --purple:#800080;
+    --orange:#FFA500;
     --cell:76px;      /* cell size */
     --gap:12px;       /* hole spacing */
     --radius:50%;
@@ -123,11 +123,11 @@ permalink: /connect4/play/
     display:flex; flex-direction:column; align-items:center; gap:10px; min-width:160px;
   }
   .panel h2{margin:0; letter-spacing:.5px}
-  .red-side h2{color:var(--red)} .yellow-side h2{color:#f4d34a}
+  .purple-side h2{color:var(--purple)} .orange-side h2{color:var(--orange)}
   .timer{font-size:38px; font-variant-numeric:tabular-nums}
   .stash{display:flex; align-items:center; gap:10px; color:#d6dbe6}
   .dot{width:18px; height:18px; border-radius:50%}
-  .red{background:var(--red)} .yellow{background:var(--yellow)}
+  .purple{background:var(--purple)} .orange{background:var(--orange)}
 
   /* Board (blue plate with circular holes) */
   #boardWrap{position:relative; padding:var(--boardPad); background:var(--blue);
@@ -148,8 +148,8 @@ permalink: /connect4/play/
   #board .hole.filled::after{
     content:""; position:absolute; inset:0; border-radius:var(--radius);
   }
-  #board .hole.red::after{background:var(--red)}
-  #board .hole.yellow::after{background:var(--yellow)}
+  #board .hole.purple::after{background:var(--purple)}
+  #board .hole.orange::after{background:var(--orange)}
 
   /* Falling coin overlay */
   .coin{
@@ -158,8 +158,8 @@ permalink: /connect4/play/
     box-shadow:0 4px 10px #0007, inset 0 -6px 0 #0003;
     transition:transform .28s cubic-bezier(.2,.9,.2,1);
   }
-  .coin.red{background:var(--red)}
-  .coin.yellow{background:var(--yellow)}
+  .coin.purple{background:var(--purple)}
+  .coin.orange{background:var(--orange)}
 
   /* Win Overlay */
   .win-overlay{
@@ -168,7 +168,7 @@ permalink: /connect4/play/
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(39, 4, 18, 0.8);
     z-index: 2000;
     display: flex;
     align-items: center;
@@ -371,10 +371,10 @@ class GameUI {
       boardWrap: document.getElementById('boardWrap'),
       board: document.getElementById('board'),
       fallCoin: document.getElementById('fall'),
-      redTimer: document.getElementById('tRed'),
-      yellowTimer: document.getElementById('tYellow'),
-      redCoins: document.getElementById('cRed'),
-      yellowCoins: document.getElementById('cYellow'),
+      purpleTimer: document.getElementById('tPurple'),
+      orangeTimer: document.getElementById('tOrange'),
+      purpleCoins: document.getElementById('cPurple'),
+      orangeCoins: document.getElementById('cOrange'),
       restartBtn: document.getElementById('restart')
     };
   }
@@ -408,18 +408,18 @@ class GameUI {
       const col = index % board.cols;
       const piece = board.grid[row][col];
       
-      hole.classList.remove('filled', 'red', 'yellow');
+      hole.classList.remove('filled', 'purple', 'orange');
       if (piece) {
         hole.classList.add('filled', piece);
       }
     });
   }
 
-  updatePlayerInfo(redPlayer, yellowPlayer) {
-    this.elements.redTimer.textContent = this.formatTime(redPlayer.time);
-    this.elements.yellowTimer.textContent = this.formatTime(yellowPlayer.time);
-    this.elements.redCoins.textContent = redPlayer.coins;
-    this.elements.yellowCoins.textContent = yellowPlayer.coins;
+  updatePlayerInfo(purplePlayer, orangePlayer) {
+    this.elements.purpleTimer.textContent = this.formatTime(purplePlayer.time);
+    this.elements.orangeTimer.textContent = this.formatTime(orangePlayer.time);
+    this.elements.purpleCoins.textContent = purplePlayer.coins;
+    this.elements.orangeCoins.textContent = orangePlayer.coins;
   }
 
   formatTime(seconds) {
@@ -475,9 +475,9 @@ class GameUI {
 class Connect4Game {
   constructor() {
     this.board = new GameBoard(6, 7);
-    this.redPlayer = new Player('Red', 'red');
-    this.yellowPlayer = new Player('Yellow', 'yellow');
-    this.currentPlayer = this.redPlayer;
+    this.purplePlayer = new Player('Purple', 'purple');
+    this.orangePlayer = new Player('Orange', 'orange');
+    this.currentPlayer = this.purplePlayer;
     this.timer = new GameTimer();
     this.ui = new GameUI();
     this.isRunning = false;
@@ -515,9 +515,9 @@ class Connect4Game {
   startGame(timeInSeconds) {
     // Reset game state
     this.board.reset();
-    this.redPlayer.reset(timeInSeconds);
-    this.yellowPlayer.reset(timeInSeconds);
-    this.currentPlayer = this.redPlayer;
+    this.purplePlayer.reset(timeInSeconds);
+    this.orangePlayer.reset(timeInSeconds);
+    this.currentPlayer = this.purplePlayer;
     this.isRunning = true;
     this.isAnimating = false;
 
@@ -525,7 +525,7 @@ class Connect4Game {
     this.ui.showGameScreen();
     this.ui.createBoard(this.board.rows, this.board.cols);
     this.ui.updateBoard(this.board);
-    this.ui.updatePlayerInfo(this.redPlayer, this.yellowPlayer);
+    this.ui.updatePlayerInfo(this.purplePlayer, this.orangePlayer);
 
     // Start timer
     this.timer.start(
@@ -554,7 +554,7 @@ class Connect4Game {
     
     // Update UI
     this.ui.updateBoard(this.board);
-    this.ui.updatePlayerInfo(this.redPlayer, this.yellowPlayer);
+    this.ui.updatePlayerInfo(this.purplePlayer, this.orangePlayer);
 
     this.isAnimating = false;
 
@@ -579,16 +579,16 @@ class Connect4Game {
     this.currentPlayer.decrementTime();
     
     if (!this.currentPlayer.hasTimeLeft()) {
-      const winner = this.currentPlayer === this.redPlayer ? this.yellowPlayer : this.redPlayer;
+      const winner = this.currentPlayer === this.purplePlayer ? this.orangePlayer : this.purplePlayer;
       this.endGame(`${winner.name} wins on time!`);
       return;
     }
 
-    this.ui.updatePlayerInfo(this.redPlayer, this.yellowPlayer);
+    this.ui.updatePlayerInfo(this.purplePlayer, this.orangePlayer);
   }
 
   switchPlayer() {
-    this.currentPlayer = this.currentPlayer === this.redPlayer ? this.yellowPlayer : this.redPlayer;
+    this.currentPlayer = this.currentPlayer === this.purplePlayer ? this.orangePlayer : this.purplePlayer;
   }
 
   endGame(message) {
