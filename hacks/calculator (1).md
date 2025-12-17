@@ -7,8 +7,56 @@ description: A modern, responsive calculator built with JavaScript. Features all
 permalink: /calculator
 ---
 
-<head>Simple Javascript Calculator</head>
-> Play around with this calculator that seems to be missing a few functions... When you're done, go check out the lesson to finish it up!
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+/* Container for all buttons */
+.calculator-container {
+  display: grid;
+  grid-template-columns: repeat(4, 70px); 
+  grid-auto-rows: 70px; 
+  gap: 10px; 
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  width: max-content; 
+  margin: auto; 
+
+/* All buttons */
+.calculator-number,
+.calculator-operation,
+.calculator-clear,
+.calculator-equals {
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Output display */
+#output {
+  grid-column: span 4;       /* Make it span all 4 columns */
+  height: 80px;              /* Make it taller */
+  font-size: 36px;           /* Bigger numbers */
+  text-align: right;         /* Align numbers to the right */
+  padding: 10px;             /* Space inside the box */
+  border: 2px solid #333;    /* Border around output */
+  border-radius: 8px;        /* Rounded corners */
+  background-color: #fff;    /* White background */
+  box-sizing: border-box;    /* Include border in size */
+}
+</style>
+
+
+
+
+
 
 <!-- Calculator container -->
 <div id="animation">
@@ -39,7 +87,7 @@ permalink: /calculator
       <div class="calculator-number">8</div>
       
       <!-- Row 5 -->
-      <div class="calculator-number zero">9</div>
+      <div class="calculator-number">9</div>
       <div class="calculator-equals">=</div>
       <div class="calculator-operation">√</div>
    
