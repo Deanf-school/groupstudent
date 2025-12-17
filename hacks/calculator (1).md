@@ -8,7 +8,7 @@ permalink: /calculator
 ---
 
 <style>
-
+/* Make borders included in size */
 * {
   box-sizing: border-box;
 }
@@ -16,15 +16,16 @@ permalink: /calculator
 /* Container for all buttons */
 .calculator-container {
   display: grid;
-  grid-template-columns: repeat(4, 70px); 
-  grid-auto-rows: 70px; 
-  gap: 10px; 
+  grid-template-columns: repeat(4, 70px); /* 4 buttons per row */
+  grid-auto-rows: 70px; /* all buttons same height */
+  gap: 10px; /* space between buttons */
   padding: 10px;
   border: 2px solid #333;
   border-radius: 8px;
   background-color: #f0f0f0;
-  width: max-content; 
-  margin: auto; 
+  width: max-content; /* shrink-wrap around grid */
+  margin: auto; /* center on page */
+}
 
 /* All buttons */
 .calculator-number,
@@ -39,6 +40,8 @@ permalink: /calculator
   font-size: 20px;
   cursor: pointer;
 }
+
+
 /* Output display */
 #output {
   grid-column: span 4;       /* Make it span all 4 columns */
@@ -51,8 +54,8 @@ permalink: /calculator
   background-color: #fff;    /* White background */
   box-sizing: border-box;    /* Include border in size */
 }
-</style>
 
+</style>
 
 
 
@@ -87,7 +90,7 @@ permalink: /calculator
       <div class="calculator-number">8</div>
       
       <!-- Row 5 -->
-      <div class="calculator-number">9</div>
+      <div class="calculator-number zero">9</div>
       <div class="calculator-equals">=</div>
       <div class="calculator-operation">√</div>
    
