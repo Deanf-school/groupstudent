@@ -23,9 +23,9 @@ permalink: /calculator
       <div class="calculator-operation">-</div>
       
       <!-- Row 2 -->
-      <div class="calculator-number">7</div>
-      <div class="calculator-number">8</div>
-      <div class="calculator-number">9</div>
+      <div class="calculator-number">1</div>
+      <div class="calculator-number">2</div>
+      <div class="calculator-number">3</div>
       <div class="calculator-operation">+</div>
       
       <!-- Row 3 -->
@@ -34,14 +34,15 @@ permalink: /calculator
       <div class="calculator-number">6</div>
       
       <!-- Row 4 -->
-      <div class="calculator-number">1</div>
-      <div class="calculator-number">2</div>
-      <div class="calculator-number">3</div>
+      <div class="calculator-number">0</div>
+      <div class="calculator-number">7</div>
+      <div class="calculator-number">8</div>
       
       <!-- Row 5 -->
-      <div class="calculator-number zero">0</div>
+      <div class="calculator-number zero">9</div>
       <div class="calculator-equals">=</div>
       <div class="calculator-operation">√</div>
+   
   </div>
 </div>
 
@@ -57,6 +58,8 @@ const numbers = document.querySelectorAll(".calculator-number");
 const operations = document.querySelectorAll(".calculator-operation");
 const clear = document.querySelectorAll(".calculator-clear");
 const equals = document.querySelectorAll(".calculator-equals");
+
+
 
 // Number buttons
 numbers.forEach(button => {
