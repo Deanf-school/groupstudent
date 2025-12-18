@@ -21,8 +21,8 @@ Hi! Our names are, Aarnav, Mateo, Dean, Roger, Kaden.
     Play RPS
   </button>
 
-  <button onclick="goTo('https://deanf-school.github.io/groupstudent/snake/')">
-    Play Snake
+  <button onclick="goTo('https://deanf-school.github.io/groupstudent/calculator')">
+    Play calculator
   </button>
   
   <button onclick="goTo('https://deanf-school.github.io/groupstudent/connect4/play/')">
@@ -37,7 +37,32 @@ Hi! Our names are, Aarnav, Mateo, Dean, Roger, Kaden.
   }
 </script>
 
+<style>
+    .game-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 300px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.game-menu button {
+  padding: 18px 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>
 
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
