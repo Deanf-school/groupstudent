@@ -51,7 +51,7 @@ Hi! Our names are, Aarnav, Mateo, Dean, Roger, Kaden.
   padding: 18px 25px;
   font-size: 18px;
   font-weight: 600;
-  color: white;
+  color: blue;
   border: none;
   border-radius: 12px;
   cursor: pointer;
