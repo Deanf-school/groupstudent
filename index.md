@@ -12,33 +12,28 @@ Hi! Our names are, Aarnav, Mateo, Dean, Roger, Kaden.
 > Coding starts with tools, explore these tools and procedures with a click.
 
 
-<button id="gameButton">Play Snake</button>
+<div class="game-menu">
+  <button onclick="goTo('https://deanf-school.github.io/groupstudent/snake/')">
+    Play Snake
+  </button>
+  
+  <button onclick="goTo('https://deanf-school.github.io/groupstudent/calculator')">
+    Open Calculator
+  </button>
+  
+  <button onclick="goTo('https://deanf-school.github.io/groupstudent/connect4/play/')">
+    Play Connect 4
+  </button>
+</div>
 
 <script>
-  // Get the button element by its ID
-  const btn = document.getElementById("gameButton");
-
-  // Add a click event listener
-  btn.addEventListener("click", function() {
-    // Redirect to the URL
-    window.location.href = "https://deanf-school.github.io/groupstudent/snake/";
-  });
-
+  // 
+  function goTo(url) {
+    window.location.href = url;
+  }
 </script>
 
-button id="gameButton">Play Snake</button>
 
-<script>
-  // Get the button element by its ID
-  const btn = document.getElementById("gameButton");
-
-  // Add a click event listener
-  btn.addEventListener("click", function() {
-    // Redirect to the URL
-    window.location.href = "https://deanf-school.github.io/groupstudent/calculator";
-  });
-
-</script>
 
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
