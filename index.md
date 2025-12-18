@@ -17,8 +17,12 @@ Hi! Our names are, Aarnav, Mateo, Dean, Roger, Kaden.
     Play Snake
   </button>
   
-  <button onclick="goTo('https://deanf-school.github.io/groupstudent/calculator')">
-    Open Calculator
+  <button onclick="goTo('https://pages.opencodingsociety.com/rock-paper-scissor/')">
+    Play RPS
+  </button>
+
+  <button onclick="goTo('https://deanf-school.github.io/groupstudent/snake/')">
+    Play Snake
   </button>
   
   <button onclick="goTo('https://deanf-school.github.io/groupstudent/connect4/play/')">
