@@ -23,8 +23,24 @@ Hi! Our names are, Aarnav, Mateo, Dean, Roger, Kaden.
     // Redirect to the URL
     window.location.href = "https://deanf-school.github.io/groupstudent/snake/";
   });
-  
+
 </script>
+
+button id="gameButton">Play Snake</button>
+
+<script>
+  // Get the button element by its ID
+  const btn = document.getElementById("gameButton");
+
+  // Add a click event listener
+  btn.addEventListener("click", function() {
+    // Redirect to the URL
+    window.location.href = "https://deanf-school.github.io/groupstudent/calculator";
+  });
+
+</script>
+
+
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
     <a href="https://github.com/Open-Coding-Society/student">
         <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
