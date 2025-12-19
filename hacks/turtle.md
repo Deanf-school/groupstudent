@@ -1,7 +1,7 @@
 ---
 layout: opencs
 title: RPG
-permalink: /turtle
+permalink: /turtle/
 ---
 
 <style>

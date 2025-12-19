@@ -4,6 +4,7 @@ title: Snake Game
 permalink: /snake/
 ---
 
+
 <style>
 
     body{
