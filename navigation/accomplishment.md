@@ -11,6 +11,11 @@ permalink: /acompblog2/
 I think i did decent on this part, helped people around me when they needed me, also got help from others.
 
 # gamify 
+I helped test the game and stuff
+
+## lessons
+I was responiable for teaching  the classes and methods lesson
+
 
 ### ACOMPLISHMENTS  BLOG 
 
@@ -28,4 +33,7 @@ teaching the lesson was a good accomplishment, accomplished more than I thought 
 
 I helped test the game, which was a great help to the other people working on it.
 
+## SUMMARY
+
+I learned alot about coding, whever its about how a JSON works or how to make a game, but overall, the most important thing I learned was teamwork. 
 
