@@ -1,6 +1,6 @@
 ---
 layout: blogs 
-title: Blogs
+title: BLOGS 2
 search_exclude: true
 permalink: /acompblog2/
 ---
