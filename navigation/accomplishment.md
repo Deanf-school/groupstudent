@@ -1,9 +1,10 @@
 ---
 layout: blogs 
-title: BLOGS 2
+title: accomplishments
 search_exclude: true
 permalink: /acompblog2/
 ---
+
 ## MY JOURNEY 
 
 # TOOLS AND SET UP
